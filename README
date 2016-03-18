@@ -1,0 +1,78 @@
+
+서울대학교 컴퓨터 공학부 석사, 박사 논문 서식입니다. LaTeX, MS Word 두 종류로 구성되어 있습니니다.
+
+
+
+< LaTeX >
+
+1. 클래스 파일 :  snuthesis_(euckr|utf8).cls
+논문 서식을 규정한 클래스 파일입니다.
+서식에서 여백, 글자간격, 용지크기(B5/A4) 등을 수정하고 싶으면, 클래스 파일의 주석을 참고하여 수정하면 됩니다.
+euckr/utf8 : 각각 euckr 환경과 utf8 환경을 나타냅니다.
+
+
+
+2. 논문 예제 파일 : snuthesis_example_(English|Korean)_(master|phd)_(euckr|utf8).tex
+클래스 파일을 사용한 논문 예제 파일입니다.
+English/Korean: 영문/국문을 나타냅니다.
+master/phd: 석사/박사를 나타냅니다.
+euc-kr/utf8: 각각 euckr 환경과 utf8 환경을 나타냅니다.
+
+
+
+3. TeX 파일을 pdf 파일로 만드는 방법
+
+- pdflatex 이용 (권장하는 방법)
+두 번 적용해야 목차가 pdf 파일에 온전히 포함됩니다.
+
+사용 예제
+$ pdflatex thesis_file.tex
+$ pdflatex thesis_file.tex
+
+생성되는 파일 
+thesis_file.(lot|lof|toc)
+	TeX 파일 내의 list of tables, list of figures, table of contents 에 대한 내용이 있는 파일입니다. 
+	pdflatex를 두 번 적용해야 이 내용이 pdf에 온전히 들어갑니다. 한번 적용하는 경우에는 pdf와 .lot, .lof, .toc 파일이 같은 폴더에 있어야 목차가 제대로 나옵니다.
+thesis_file.aux : TeX 파일 내의 list of tables, list of figures, table of contents를 만들며 생기는 임시 파일입니다. 
+thesis_file.log : pdflatex를 이용하여 TeX 파일을 pdf 파일로 만들때 생기는 로그들을 모아둔 파일입니다. 
+thesis_file.pdf : 최종 결과물인 pdf 파일 입니다. 
+
+
+- latex / dvipdfmx 이용
+latex / dvipdfmx 조합을 이용하실 경우 B5 사이즈로 만들기 원하시면 dvipdfmx에서 -p b5 옵션을 사용하면 됩니다. 
+latex를 두 번 적용해야 목차가 pdf 파일에 온전히 포함됩니다.
+
+사용 예제 (A4용 pdf를 만들 경우)
+$ latex thesis_file.tex 
+$ latex thesis_file.tex 
+$ dvipdfmx thesis_file.dvi
+
+사용 예제 (B5용 pdf를 만들 경우)
+$ latex thesis_file.tex 
+$ latex thesis_file.tex 
+$ dvipdfmx -p b5 thesis_file.dvi 
+
+생성되는 파일 
+thesis_file.(lot|lof|toc)
+	TeX 파일 내의 list of tables, list of figures, table of contents 에 대한 내용이 있는 파일입니다. 
+	pdflatex를 두 번 적용해야 이 내용이 pdf에 온전히 들어갑니다. 한번 적용하는 경우에는 pdf와 .lot, .lof, .toc 파일이 같은 폴더에 있어야 목차가 제대로 나옵니다.
+thesis_file.aux : TeX 파일 내의 list of tables, list of figures, table of contents를 만들며 생기는 임시 파일입니다. 
+thesis_file.log : pdflatex를 이용하여 TeX 파일을 pdf 파일로 만들때 생기는 로그들을 모아둔 파일입니다. 
+thesis_file.dvi : 최종 결과물인 pdf 파일을 생성하는 중에 생기는 파일입니다. dvi를 열어볼 수 있는 뷰어를 사용하시면 작성한 논문 내용을 볼 수 있습니다.
+thesis_file.pdf : 최종 결과물인 pdf 파일 입니다. 
+
+
+
+
+
+
+< MS Word >
+
+1. ms_word 디렉토리에 있으며, MS Word 2010 버전을 이용하여 만들었습니다. 하위 버전에 대해 호환이 완벽하지 않을 수 있으니 주의바랍니다.
+
+2. 논문 예제 파일 : snuthesis_example_(English|Korean)_(master|phd)_(b5|a4).docx
+MS Word 2010 버전을 사용하여 제작한 논문 예제 파일입니다.
+English/Korean: 영문/국문을 나타냅니다.
+master/phd: 석사/박사를 나타냅니다.
+b5/a4 : B5/A4 용지를 나타냅니다.
+
